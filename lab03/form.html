@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            transition: .2s linear;
+        }
+
+        #contact {
+            width: 600px;
+            height: 550px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #E6E6E6;
+        }
+
+        .container {
+            width: 94%;
+            height: 94%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 8px;
+            background-color: white;
+            padding: 20px;
+            display: block;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-weight: 900;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .container .input {
+            margin: 0 20px;
+            margin-top: 15px;
+            background-color: #F7F7F7;
+            border-radius: 10px;
+            padding: 10px 15px;
+            height: 55px;
+        }
+
+        .container .input p {
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .container .input input {
+            width: 100%;
+            background-color: inherit;
+            border: none;
+            font-size: 14px;
+            outline: none;
+            padding-top: 10px;
+        }
+
+        .container .input form select {
+            width: 100%;
+            background-color: inherit;
+            border: none;
+            font-size: 14px;
+            outline: none;
+            padding-top: 10px;
+        }
+
+        .container .half-input {
+            margin: 0 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container .half-input .input {
+            margin: 0;
+            width: 230px;
+        }
+
+        .container button {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            margin: 0 20px;
+            margin-top: 20px;
+            width: calc(100% - 40px);
+            border-radius: 20px;
+            padding: 5px;
+            font-size: 14px;
+            letter-spacing: .3px;
+        }
+
+        .container button i {
+            font-size: 10px;
+        }
+
+        .container button:hover {
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #333;
+            color: black;
+            animation: all 2s;
+        }
+
+        .container .area {
+            height: 100px;
+            border: 1px solid #E6E6E6;
+            background-color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contact">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="input">
+            <p>FULL NAME *</p>
+            <input type="text" name="full-name" placeholder="Enter Your Name">
+        </div>
+        <div class="half-input">
+            <div class="input">
+                <p>EMAIL *</p>
+                <input type="text" name="full-name" placeholder="Enter Your Email">
+            </div>
+            <div class="input">
+                <p>PHONE </p>
+                <input type="text" name="full-name" placeholder="Enter Your Phone">
+            </div>
+        </div>
+        <div class="input">
+            <p>NEEDED SERVICES *</p>
+            <form name="form1" id="form1">
+                <select name="select" id="select" class="combobox">
+                    <option value="1">Please Chooses</option>
+                    <option value="2">So Bad</option>
+                    <option value="3">Normal</option>
+                    <option value="4">Good</option>
+                    <option value="5">Great</option>
+                    <option value="6">Unbelieveble</option>
+                </select>
+            </form>
+        </div>
+        <div class="input area">
+            <p>MESSAGE </p>
+            <input type="text" name="full-name" placeholder="Your message here...">
+        </div>
+        <button>Submit <i class="fa-solid fa-right-long"></i></button>
+
+    </div>
+</div>
+</body>
+</html>

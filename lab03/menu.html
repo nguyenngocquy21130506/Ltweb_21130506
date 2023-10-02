@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        nav {
+            background-color: #eee;
+            width: 100%;
+            height: 45px;
+
+        }
+
+        #menu {
+            position: relative;
+            height: 100%;
+            border-bottom: 2px solid #8B0000;
+            border-left: 4px solid #8B0000;
+        }
+
+        #menu .sub-menu {
+            float: left;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-weight: 600;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        #menu .menu-1 {
+            border-top: 2px solid #8B0000;
+            display: none;
+        }
+        #menu .menu-1 .sub-menu-1{
+            float: none;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 45px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        #menu .menu-1 .sub-menu-1:hover{
+            cursor: pointer;
+            background-color: #8B0000;
+            color: white;
+        }
+
+        #menu .sub-menu:hover {
+            cursor: pointer;
+            opacity: 0.8;
+            background-color: #8B0000;
+            color: white;
+        }
+
+        #menu .sub-menu:hover .menu-1 {
+            display: block;
+            background-color: #eee;
+            color: black;
+            position: absolute;
+            margin-top: 135px;
+            margin-left: -20px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div id="menu">
+        <div class="sub-menu">HOME</div>
+        <div class="sub-menu">PRODUCTS
+            <div class="menu-1">
+                <div class="sub-menu-1">Tivi</div>
+                <div style=" border-top: 2px solid #cbc5c5;" class="sub-menu-1">Máy tính xách tay</div>
+            </div>
+        </div>
+        <div class="sub-menu">ABOUT US</div>
+        <div class="sub-menu">CONTACT</div>
+    </div>
+</nav>
+</body>
+</html>
