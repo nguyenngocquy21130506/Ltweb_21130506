@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif, Arial;
+            transition: .2s linear;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            /*background: url("background.png") no-repeat;*/
+            /*background-position: center;*/
+            background-size: cover;
+            margin: 0;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            position: absolute;
+            background: linear-gradient(45deg, #4444d9, #7c14e3);;
+        }
+
+        #form {
+            width: 25%;
+            height: 85%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .container {
+            width: 95%;
+            height: 94%;
+            background-color: white;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container h1 {
+            padding: 20px 0;
+            letter-spacing: .3px;
+        }
+
+        .container .input .sub-input {
+            background-color: white;
+            margin: 20px 0;
+            height: 55px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px #e7e6e6;
+            position: relative;
+        }
+
+        .container .input .sub-input input {
+            width: auto;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-weight: 800;
+            /*background-color: #8B0000;*/
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            letter-spacing: .5px;
+        }
+
+        .container .input button {
+            background-color: #bc59d6;
+            color: white;
+            border-radius: 50px;
+            padding: 15px 35px;
+            border: none;
+            outline: none;
+            width: 50%;
+            font-weight: 700;
+            box-shadow: 0 4px 20px 0 #bc59d6;
+        }
+
+        .container .input button:hover {
+            cursor: pointer;
+            color: black;
+            background-color: #dd9fee;
+        }
+
+        .container p {
+            font-size: 15px;
+            color: #c5c5c5;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .container .icon {
+            width: auto;
+            height: auto;
+            margin-bottom: 80px;
+        }
+
+        .container .icon img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            border-radius: 50%;
+            box-shadow: 0 3px 5px 1px #E6E6E6;
+        }
+
+        .container .icon img:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .container a {
+            text-decoration: none;
+            color: #6F5D73;
+            font-weight: 600;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mask"></div>
+<div id="form">
+    <div class="container">
+        <h1>Sign in</h1>
+        <div class="input">
+            <div class="sub-input">
+                <input id="username" type="email" name="username" placeholder="username or email">
+            </div>
+            <div class="sub-input">
+                <input id="pass" type="text" name="username" placeholder="password">
+            </div>
+            <button onclick="check()">SIGN IN</button>
+        </div>
+        <p style="position: absolute ; margin-top: -30px; left: 50%; transform:translateX(-50%); color: red; width: 250px"
+           id="Error"></p>
+        <p>Or login with</p>
+        <div class="icon">
+            <img src="facebook.png" alt="">
+            <img src="google.png" alt="">
+        </div>
+        <a href="#">Sign Up</a>
+    </div>
+</div>
+
+<script>
+    const username = document.getElementsByClassName('username');
+    const password = document.getElementsByClassName('pass');
+
+    function check() {
+        // Kiểm tra email có hợp lệ không
+        if (!isValidEmail(username)) {
+            document.getElementById('Error').textContent = 'Email không hợp lệ';
+            document.getElementById('username').classList.add('error');
+        }
+
+        // Kiểm tra password có hợp lệ không (ví dụ: ít nhất 6 ký tự)
+        if (password.length < 6) {
+            document.getElementById('Error').textContent += ' Password phải có ít nhất 6 ký tự';
+            document.getElementById('pass').classList.add('error');
+        }
+    }
+
+    function isValidEmail(username) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username);
+    }
+</script>
+</body>
+</html>

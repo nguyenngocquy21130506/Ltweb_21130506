@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 200px;
+            height: auto;
+            display: block;
+            font-size: 30px;
+            font-family: sans-serif;
+            color: #000;
+        }
+        h1{
+            width: 1000px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        textarea, input, button {
+            font-size: 20px;
+        }
+
+        button {
+            width: 80px;
+            height: 50px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Kiểm tra số chữ có trong văn bản</h1>
+<textarea id="area" cols="30" rows="10">Hello Everyone, I'm Quy, I come from Viet Nam, I'm 20 years old.</textarea>
+<input type="text" id="texts">
+<button id="btn" onclick="solve()">Solve</button>
+<p id="result"></p>
+
+<script>
+    const area = document.getElementById('area');
+    const texts = document.getElementById('texts');
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+
+    function solve() {
+        const searchText = texts.value;
+        const areaText = area.value;
+        var count = 0;
+        var i = 0;
+        var check = true;
+
+        while (check) {
+            if (searchText == areaText.substring(i, i + searchText.length)) {
+                count++;
+            }
+            if (i == areaText.length - searchText.length) {
+                check = false;
+            }
+            i++;
+        }
+        result.textContent = searchText + " xuat hien " + count + " lan trong textarea !"
+
+    }
+</script>
+</body>
+</html>

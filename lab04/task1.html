@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #painbtn {
+            width: 100%;
+            height: 100px;
+            background-color: beige;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 5px 20px 10px #7e7b7b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            width: 5%;
+            height: 100%;
+            border-radius: 50%;
+            /*border: none;*/
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div id="painbtn">
+    <!--    <div class="container">-->
+    <button style="background-color: #FFF5E9" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #7f94cd" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #ed9b6a" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #8769a4" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #ecb4d1" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #f4b893" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #edce65" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #c5bf9b" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #d5a2db" onclick="change_bgkcolor()" class="button"></button>
+    <button style="background-color: #b0bde9" onclick="change_bgkcolor()" class="button"></button>
+    <!--    </div>-->
+</div>
+<script>
+    // Lay all cac button co class "button"
+    const buttons = document.querySelectorAll('.button');
+
+    // Lambda button va gan su kien click cho button
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            // Lay mau nen cua button de gan cho mau nen cu body
+            document.body.style.backgroundColor = button.style.backgroundColor;
+        });
+    });
+</script>
+</body>
+</html>

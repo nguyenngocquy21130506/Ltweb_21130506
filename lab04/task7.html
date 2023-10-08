@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-gap: 10px;
+        }
+
+        .game-button {
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .game-button.clicked {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+<div class="button-container">
+    <!-- Tạo 64 button từ 1 đến 64 -->
+    <button id="1" class="game-button">1</button>
+    <button id="2" class="game-button">2</button>
+    <button id="3" class="game-button">3</button>
+    <button id="4" class="game-button">4</button>
+    <button id="5" class="game-button">5</button>
+    <button id="6" class="game-button">6</button>
+    <button id="7" class="game-button">7</button>
+    <button id="8" class="game-button">8</button>
+    <button id="9" class="game-button">9</button>
+    <button id="10" class="game-button">10</button>
+    <button id="11" class="game-button">11</button>
+    <button id="12" class="game-button">12</button>
+    <button id="13" class="game-button">13</button>
+    <button id="14" class="game-button">14</button>
+    <button id="15" class="game-button">15</button>
+    <button id="16" class="game-button">16</button>
+    <button id="17" class="game-button">17</button>
+    <button id="18" class="game-button">18</button>
+    <button id="19" class="game-button">19</button>
+    <button id="20" class="game-button">20</button>
+    <button id="21" class="game-button">21</button>
+    <button id="22" class="game-button">22</button>
+    <button id="23" class="game-button">23</button>
+    <button id="24" class="game-button">24</button>
+    <button id="25" class="game-button">25</button>
+    <button id="26" class="game-button">26</button>
+    <button id="27" class="game-button">27</button>
+    <button id="28" class="game-button">28</button>
+    <button id="29" class="game-button">29</button>
+    <button id="30" class="game-button">30</button>
+    <button id="31" class="game-button">31</button>
+    <button id="32" class="game-button">32</button>
+    <button id="33" class="game-button">33</button>
+    <button id="34" class="game-button">34</button>
+    <button id="35" class="game-button">35</button>
+    <button id="36" class="game-button">36</button>
+    <button id="37" class="game-button">37</button>
+    <button id="38" class="game-button">38</button>
+    <button id="39" class="game-button">39</button>
+    <button id="40" class="game-button">40</button>
+    <button id="41" class="game-button">41</button>
+    <button id="42" class="game-button">42</button>
+    <button id="43" class="game-button">43</button>
+    <button id="44" class="game-button">44</button>
+    <button id="45" class="game-button">45</button>
+    <button id="46" class="game-button">46</button>
+    <button id="47" class="game-button">47</button>
+    <button id="48" class="game-button">48</button>
+    <button id="49" class="game-button">49</button>
+    <button id="50" class="game-button">50</button>
+    <button id="51" class="game-button">51</button>
+    <button id="52" class="game-button">52</button>
+    <button id="53" class="game-button">53</button>
+    <button id="54" class="game-button">54</button>
+    <button id="55" class="game-button">55</button>
+    <button id="56" class="game-button">56</button>
+    <button id="57" class="game-button">57</button>
+    <button id="58" class="game-button">58</button>
+    <button id="59" class="game-button">59</button>
+    <button id="60" class="game-button">60</button>
+    <button id="61" class="game-button">61</button>
+    <button id="62" class="game-button">62</button>
+    <button id="63" class="game-button">63</button>
+    <button id="64" class="game-button">64</button>
+
+    <!-- Thêm các button còn lại ở đây -->
+    <!-- ... -->
+    <button id="64" class="game-button">64</button>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.game-button');
+    let currentButtonId = 1;
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const buttonId = parseInt(button.id);
+
+            if (buttonId === currentButtonId) {
+                button.classList.add('clicked');
+                currentButtonId++;
+
+                if (currentButtonId > 64) {
+                    alert('Chúc mừng! Bạn đã nhấn đúng tất cả các button.');
+                }
+            } else {
+                alert('Bạn đã nhấn sai button. Vui lòng nhấn theo thứ tự từ nhỏ đến lớn.');
+            }
+        });
+    });
+
+    // Lấy container chứa các button
+    const buttonContainer = document.getElementsByClassName('game-button');
+
+    // Lấy danh sách các button
+    const buttonss = Array.from(buttonContainer.querySelectorAll('.game-button'));
+
+    // Trộn mảng các button
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArray(buttonss);
+
+    // Gán lại thứ tự cho các button trong container
+    buttonss.forEach((button, index) => {
+        buttonContainer.appendChild(button);
+    });
+</script>
+</body>
+</html>

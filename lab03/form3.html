@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif, Arial;
+        }
+
+        #form3 {
+            background-color: #E3E3E3;
+            width: 450px;
+            height: 630px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #form3 .container {
+            padding: 30px;
+            background-color: #fff;
+            width: 95%;
+            height: 96%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 3px;
+            box-shadow: 0 0 10px 1px #d0cfcf;
+            display: inline;
+        }
+
+        #form3 .container .item {
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        #form3 .container .item span {
+            color: #7ED321;
+            font-weight: 600;
+        }
+
+        #form3 .container .item .sub-item {
+            height: 35px;
+            margin-top: 15px;
+        }
+
+        #form3 .container .account-item .sub-item {
+            background-color: #F9F9F9;
+            border: 1.5px solid #EBEBEB;
+            display: flex;
+        }
+
+        #form3 .container .account-item .sub-item input {
+            width: 85%;
+        }
+
+        #form3 .container .item .sub-item .icon {
+            width: 15%;
+            height: 100%;
+            /*background-color: #777;*/
+            border-right: 1px solid #ebebeb;
+            position: relative;
+        }
+
+        #form3 .container .item .sub-item .icon i {
+            color: #c2c2c2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #form3 .container .item .sub-item input {
+            border: none;
+            background-color: inherit;
+            height: 100%;
+            padding-left: 15px;
+            outline: none;
+            opacity: 0.8;
+        }
+
+        #form3 .container .half-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #form3 .container .date-item,
+        #form3 .container .gender-item {
+            width: 180px;
+        }
+
+        #form3 .container .gender-item .sub-item,
+        #form3 .container .date-item .sub-item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            /*height: 35px;*/
+        }
+
+        #form3 .container .date-item .sub-item input {
+            width: 50px;
+            border: 1.5px solid #EBEBEB;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #form3 .container .date-item .sub-item input.y {
+            min-width: 70px;
+        }
+
+        #form3 .container .gender-item .sub-item input {
+            width: 90px;
+            border: 1.5px solid #EBEBEB;
+            padding: 0;
+            text-align: center;
+        }
+
+        #form3 .container .gender-item .sub-item input:hover {
+            cursor: pointer;
+            background-color: #7ED321;
+        }
+
+        #form3 .container .terms-item {
+            margin: 0;
+        }
+
+        #form3 .container .terms-item .sub-item {
+            display: flex;
+        }
+
+        #form3 .container .terms-item .sub-item p {
+            margin-left: 10px;
+            color: #c2c2c2;
+            font-size: 12px;
+        }
+
+        #form3 .container .payment-item .sub {
+            margin-top: 15px;
+            background-color: #F9F9F9;
+            border: 1.5px solid #EBEBEB;
+            width: 100%;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #form3 .container .payment-item .half-item .active {
+            color: white;
+            background-color: #7ED321;
+        }
+        #form3 .container .payment-item .half-item i{
+            padding: 0 7px;
+        }
+
+        #form3 .container .payment-item .sub {
+            color: #c2c2c2;
+            font-size: 14px;
+        }
+
+        #form3 .container .payment-item .sub:hover {
+            /*background-color: #7ED321;*/
+            cursor: pointer;
+            /*color: white;*/
+        }
+
+        #form3 .container .payment-item .sub-item {
+            display: flex;
+            background-color: #F9F9F9;
+            border: 1.5px solid #EBEBEB;
+        }
+
+        #form3 .container .payment-item .half-item1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #form3 .container .payment-item .half-item1 .sub-item {
+            width: 180px;
+            display: flex;
+        }
+
+        #form3 .container .payment-item .half-item1 .sub-item input {
+            width: 85%;
+        }
+
+        #form3 .container .payment-item .half-item1 .sub-item .icon {
+            width: 40%;
+            height: 100%;
+            /*background-color: #777;*/
+            border-right: 1px solid #ebebeb;
+        }
+
+        #form3 .container .payment-item .half-item1 .sub-item select {
+            width: 50%;
+            outline: none;
+            border: none;
+            border-right: 1.5px solid #ebebeb;
+            padding-left: 10px;
+            color: #6D6D6D;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="form3">
+    <div class="container">
+        <div class="account-item item">
+            <span>Account</span>
+            <div class="sub-item">
+                <div class="icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <input type="email" name="" placeholder="Full Name">
+            </div>
+            <div class="sub-item">
+                <div class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <input type="text" name="" placeholder="Email Address">
+            </div>
+            <div class="sub-item">
+                <div class="icon">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <input type="password" name="" placeholder="Password">
+            </div>
+        </div>
+        <div class="half-item">
+            <div class="date-item item">
+                <span>Date of Birth</span>
+                <div class="sub-item">
+                    <input type="text" name="" placeholder="DD">
+                    <input type="text" name="" placeholder="MM">
+                    <input type="text" name="" placeholder="YYYY" class="y">
+                </div>
+            </div>
+            <div class="gender-item item">
+                <span>Gender</span>
+                <div class="sub-item">
+                    <input type="text" name="" placeholder="Male">
+                    <input type="text" name="" placeholder="Female">
+                </div>
+            </div>
+        </div>
+        <div class="payment-item item">
+            <span>Payment Details</span>
+            <div class="half-item">
+                <div class="sub active">
+                    <i class="fa-solid fa-message"></i>
+                    <p>Creadit Card</p>
+                </div>
+                <div class="sub">
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <p>Paypal</p>
+                </div>
+            </div>
+            <div class="sub-item">
+                <div class="icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <input type="text" name="" placeholder="Cart Number">
+            </div>
+            <div class="half-item1">
+                <div class="sub-item">
+                    <div class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input type="text" name="" placeholder="Card CVC">
+                </div>
+                <div class="sub-item">
+                    <select>
+                        <option value="1">01 Jan</option>
+                        <option value="2">02 Jan</option>
+                    </select>
+                    <select>
+                        <option value="1">2015</option>
+                        <option value="2">2016</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="terms-item item">
+            <span>Terms and Conditions</span>
+            <div class="sub-item">
+                <input type="checkbox" name="">
+                <p>I accept the terms and conditions for signing up to this service, and hereby confirm I have read the
+                    privacy policy</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

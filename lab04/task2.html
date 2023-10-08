@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif, Arial;
+            box-sizing: border-box;
+        }
+
+        .container{
+            padding: 20px;
+            width: 500px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #7f94cd;
+            text-align: center;
+        }
+        form{
+            margin: 100px 50px;
+            font-size: 20px;
+        }
+        form input{
+            width: 50px;
+        }
+        form button, p{
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Giải Phương Trình Bậc II</h1>
+        <form id="quadratic-form">
+            <label for="a">a:</label>
+            <input type="number" id="a" required>
+            <label for="b">b:</label>
+            <input type="number" id="b" required>
+            <label for="c">c:</label>
+            <input type="number" id="c" required>
+            <button type="submit"><b>Giải</b></button>
+        </form>
+        <p id="result"></p>
+    </div>
+<script>
+    // Lấy form và kết quả từ DOM
+    const form = document.getElementById('quadratic-form');
+    const resultElement = document.getElementById('result');
+
+    // Thêm sự kiện submit cho form
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Lấy giá trị a, b, c từ form
+        const a = parseFloat(document.getElementById('a').value);
+        const b = parseFloat(document.getElementById('b').value);
+        const c = parseFloat(document.getElementById('c').value);
+
+        // Gọi hàm giải phương trình và hiển thị kết quả
+        const result = solveQuadraticEquation(a, b, c);
+        resultElement.textContent = result;
+    });
+
+    // Hàm giải phương trình bậc II và trả về kết quả dưới dạng chuỗi
+    function solveQuadraticEquation(a, b, c) {
+        // Tính delta
+        const delta = b * b - 4 * a * c;
+        // Kiểm tra delta
+        if (delta > 0) {
+            const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            return `Phương trình có 2 nghiệm: x1 = ${x1}, x2 = ${x2}`;
+        } else if (delta === 0) {
+            const x = -b / (2 * a);
+            return `Phương trình có 1 nghiệm kép: x = ${x}`;
+        } else {
+            return 'Phương trình vô nghiệm';
+        }
+    }
+</script>
+</body>
+</html>
