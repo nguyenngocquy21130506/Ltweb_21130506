@@ -57,31 +57,34 @@
             letter-spacing: .3px;
         }
 
-        .container .input .sub-input {
+        .container .input {
             background-color: white;
             margin: 20px 0;
-            height: 55px;
             width: 100%;
+            height: 100px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px #e7e6e6;
-            position: relative;
+            margin-bottom: 20px;
+            /*position: relative;*/
         }
 
-        .container .input .sub-input input {
-            width: auto;
-            height: 100%;
-            border: none;
+        .container .input input {
+            width: 80%;
+            height: 36px;
+            border-radius: 20px;
             outline: none;
+            border: none;
             font-weight: 800;
+            margin: 10px auto;
             /*background-color: #8B0000;*/
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 20px;
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*transform: translateY(-50%);*/
+            /*left: 20px;*/
             letter-spacing: .5px;
+            box-shadow: 0 4px 15px #e7e6e6;
         }
 
-        .container .input button {
+        .container .input .btn {
             background-color: #bc59d6;
             color: white;
             border-radius: 50px;
@@ -93,7 +96,7 @@
             box-shadow: 0 4px 20px 0 #bc59d6;
         }
 
-        .container .input button:hover {
+        .container .input .btn:hover {
             cursor: pointer;
             color: black;
             background-color: #dd9fee;
@@ -102,7 +105,7 @@
         .container p {
             font-size: 15px;
             color: #c5c5c5;
-            padding-top: 40px;
+            padding-top: 60px;
             padding-bottom: 20px;
         }
 
@@ -135,10 +138,6 @@
             text-decoration: underline;
         }
 
-        .error {
-            color: red;
-        }
-
     </style>
 </head>
 <body>
@@ -147,16 +146,14 @@
     <div class="container">
         <h1>Sign in</h1>
         <div class="input">
-            <div class="sub-input">
-                <input id="username" type="email" name="username" placeholder="username or email">
-            </div>
-            <div class="sub-input">
-                <input id="pass" type="text" name="username" placeholder="password">
-            </div>
-            <button onclick="check()">SIGN IN</button>
+            <form action="task3" method="get">
+                <input type="text" name="username" id="username" placeholder="username or email" >
+                <br>
+                <input type="password" name="password" id="password" placeholder="password" >
+                <br>
+                <input type="submit" class="btn" value="Log in">
+            </form>
         </div>
-        <p style="position: absolute ; margin-top: -30px; left: 50%; transform:translateX(-50%); color: red; width: 250px"
-           id="Error"></p>
         <p>Or login with</p>
         <div class="icon">
             <img src="facebook.png" alt="">
@@ -165,7 +162,6 @@
         <a href="#">Sign Up</a>
     </div>
 </div>
-
 <script>
     const username = document.getElementById('username');
     const password = document.getElementById('pass');
