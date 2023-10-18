@@ -146,7 +146,7 @@
     <div class="container">
         <h1>Sign in</h1>
         <div class="input">
-            <form action="task3" method="get">
+            <form action="task3" method="post">
                 <input type="text" name="username" id="username" placeholder="username or email" >
                 <br>
                 <input type="password" name="password" id="password" placeholder="password" >
