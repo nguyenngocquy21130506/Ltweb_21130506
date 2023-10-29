@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,6 +138,10 @@
         .container a:hover {
             text-decoration: underline;
         }
+        p.danger{
+            margin: 0;
+            padding: 0;
+        }
 
     </style>
 </head>
@@ -146,10 +151,20 @@
     <div class="container">
         <h1>Sign in</h1>
         <div class="input">
+            <%--            <% String error =  ((String) request.getAttribute("errorUsername")).toString();%>--%>
+
+            <%--            <c:if test="${not empty errorUsername}"><p>${errorUsername}</p></c:if>--%>
             <form action="task3" method="post">
-                <input type="text" name="username" id="username" placeholder="username or email" >
+
+                <% String emailerror = (String) request.getAttribute("Emailerror"); %>
+
+                <% if (emailerror != null) { %>
+                <p class="danger"><%= emailerror %></p>
+                <% } %>
+
+                <input type="text" name="username" id="username" placeholder="username or email">
                 <br>
-                <input type="password" name="password" id="password" placeholder="password" >
+                <input type="password" name="password" id="password" placeholder="password">
                 <br>
                 <input type="submit" class="btn" value="Log in">
             </form>
