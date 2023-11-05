@@ -160,14 +160,14 @@
             <%--            <% String error =  ((String) request.getAttribute("errorUsername")).toString();%>--%>
 
             <%--            <c:if test="${not empty errorUsername}"><p>${errorUsername}</p></c:if>--%>
-            <form action="task3" method="post">
+            <form action="login" method="post">
 
                 <% String emailerror = (String) request.getAttribute("Emailerror"); %>
                 <% String emailClass = (emailerror != null) ? "error" : ""; %>
                 <% if (emailerror != null) { %>
                 <p class="danger"><%= emailerror %>
                 </p>
-                request.setAttribute("emailClass", emailClass);
+<%--                request.setAttribute("emailClass", emailClass);--%>
                 <% } %>
                 <%--                <%--%>
                 <%--                    String emailerror = (String) request.getAttribute("Emailerror");--%>

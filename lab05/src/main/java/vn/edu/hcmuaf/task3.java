@@ -17,14 +17,11 @@ public class task3 extends HttpServlet {
         System.out.println("username : "+username);
         if(!username.contains("@")) {
             req.setAttribute("Emailerror", "Email is error !");
-            req.getRequestDispatcher("./task3.jsp").forward(req,resp);
+            req.setAttribute("emailClass", "error");
+            req.getRequestDispatcher("/task3.jsp").forward(req,resp);
         }
 
         if (username.equals("user@gmail.com") && password.equals("123")) {
-//            resp.getWriter().println("<h1>Username : </h1>");
-//            resp.getWriter().println(username);
-//            resp.getWriter().println("<h1>Password : </h1>");
-//            resp.getWriter().println(password);
             resp.getWriter().println("<h1 style = 'color : green;'> Login sucessful ! </h1>");
         } else {
 //            req.setAttribute("errorUsername" , "Incorrect username");
